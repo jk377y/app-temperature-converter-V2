@@ -1,7 +1,7 @@
 import tkinter as tk
 import customtkinter as ctk # import the customtkinter module; used to create custom widgets and windows for standalone apps
 
-ctk.set_appearance_mode("dark")  # Modes: system (OS settings decide), light, dark
+ctk.set_appearance_mode("system")  # Modes: system (OS settings decide), light, dark
 ctk.set_default_color_theme("dark-blue") # set the default color theme for all widgets; 'dark-blue', 'blue', and 'green' are available
 
 #? main window
