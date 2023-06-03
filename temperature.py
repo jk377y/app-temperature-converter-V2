@@ -1,11 +1,11 @@
-import customtkinter as ctk # import the customtkinter module; used to create custom widgets and windows for standalone apps
+import tkinter as tk # import the customtkinter module; used to create custom widgets and windows for standalone apps
 
 
 #? main window
 # ==============================================================================================
-window = ctk.CTk()  # create the main window
+window = tk.Tk()  # create the main window
 window.title("Temperature Converter")  # set the title of the main window
-window.geometry("300x450")  # set the size of the main window
+window.geometry("510x270")  # set the size of the main window
 # ==============================================================================================
 
 
@@ -48,32 +48,32 @@ def KelvinToCelcius(): # function to convert Kelvin to Celsius
 #? elements inside the main window (children); input box, buttons, labels, etc.
 # ==============================================================================================
 
-label = ctk.CTkLabel(window, text="Enter temperature:", font=("Arial", 20))  # create a label widget; child of root
-label.pack(pady=10)  # make the label visible; pack it into the main window (root)
+label = tk.Label(window, text="Enter temperature:", font=("Arial", 20))  # create a label widget; child of root
+label.grid(row=0, column=1, pady=20, padx=10)  # make the label visible; pack it into the main window (root)
 
-entry = ctk.CTkEntry(window) # create an entry widget; child of root; this is the input box
-entry.pack(pady=10)
+entry = tk.Entry(window,) # create an entry widget; child of root; this is the input box
+entry.grid(row=1, column=1)
 
-ctof_btn = ctk.CTkButton(window, text="Celsius to Fahrenheit", command=CelciusToFahrenheit)
-ctof_btn.pack(pady=10)
+ctof_btn = tk.Button(window, text="Celsius to Fahrenheit", command=CelciusToFahrenheit)
+ctof_btn.grid(row=2, column=0)
 
-ctok_btn = ctk.CTkButton(window, text="Celsius to Kelvin", command=CelciusToKelvin)
-ctok_btn.pack(pady=10)
+ctok_btn = tk.Button(window, text="Celsius to Kelvin", command=CelciusToKelvin)
+ctok_btn.grid(row=3, column=0)
 
-ftoc_btn = ctk.CTkButton(window, text="Fahrenheit to Celsius", command=FahrenheitToCelcius)
-ftoc_btn.pack(pady=10)
+ftoc_btn = tk.Button(window, text="Fahrenheit to Celsius", command=FahrenheitToCelcius)
+ftoc_btn.grid(row=2, column=1)
 
-ftok_btn = ctk.CTkButton(window, text="Fahrenheit to Kelvin", command=FahrenheitToKelvin)
-ftok_btn.pack(pady=10)
+ftok_btn = tk.Button(window, text="Fahrenheit to Kelvin", command=FahrenheitToKelvin)
+ftok_btn.grid(row=3, column=1)
 
-ktoc_btn = ctk.CTkButton(window, text="Kelvin to Celsius", command=KelvinToCelcius)
-ktoc_btn.pack(pady=10)
+ktoc_btn = tk.Button(window, text="Kelvin to Celsius", command=KelvinToCelcius)
+ktoc_btn.grid(row=2, column=2)
 
-ktof_btn = ctk.CTkButton(window, text="Kelvin to Fahrenheit", command=KelvinToFahrenheit)
-ktof_btn.pack(pady=10)
+ktof_btn = tk.Button(window, text="Kelvin to Fahrenheit", command=KelvinToFahrenheit)
+ktof_btn.grid(row=3, column=2)
 
-result_label = ctk.CTkLabel(window, text="", font=("Arial", 24), text_color="yellow")
-result_label.pack(pady=10)
+result_label = tk.Label(window, text="", font=("Arial", 18))
+result_label.grid(row=4, column=0)
 # ==============================================================================================
 
 
